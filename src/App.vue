@@ -34,6 +34,14 @@
   <v-app-bar app dark color="primary">
     <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
     <v-spacer></v-spacer>
+    <v-toolbar-title>
+      <router-link 
+      to="/" 
+      tag="span" 
+      class="pointer"
+      >Home</router-link>
+      </v-toolbar-title>
+      
     <v-toolbar-items class="hidden-sm-and-down">
               <v-btn 
        v-for="link in links" 
@@ -55,14 +63,18 @@ export default {
       drawer: false,
       links: [
       {title:"Login", icon:"mdi-lock", url:"/login"},
-       {title:"Registration",icon:"mdi-face",url:"/registration"},
-  {title:"Orders",icon:"mdi-bookmark-multiple-outline",
-  url:"/orders"},
+       {title:"Registration",icon:"mdi-face-recognition",url:"/registration"},
+       {title:"Orders", icon:"mdi-bookmark-multiple", url:"/orders"},
        {title:"New ad", icon:"mdi-note-plus-outline", url:"/new"},
        {title:"My ads", icon:"mdi-view-list-outline", url:"/list"}
       ]
 
     }
   }
-}
+};
 </script>
+<style scoped>
+  .pointer {
+    cursor: pointer;
+    }
+</style>
