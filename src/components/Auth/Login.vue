@@ -10,8 +10,9 @@
 					<v-form v-model="valid" ref="form"
 					validation>
 					<v-text-field
-						prepend-icon="mdi-account" 							name="email" 
-					label="Email" 
+						prepend-icon="mdi-account"
+						name="email" 
+						label="Email" 
 						type="email"
 						v-model="email"
 						:rules="emailRules" >
