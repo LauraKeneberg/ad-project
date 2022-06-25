@@ -1,6 +1,6 @@
 <template>
 	<v-container>
-		<v-layout row> 
+		<v-layout row>
 			<v-flex xs12>
 				<v-card class="mt-5">
 					<v-img
@@ -15,22 +15,22 @@
 						<v-spacer></v-spacer>
 						<v-btn text class="warning">Edit</v-btn>
 						<v-btn class="success">Buy</v-btn>
-					</v-card-actions>	
+					</v-card-actions>
 				</v-card>
 			</v-flex>
-		</v-layout> 
+		</v-layout>
 	</v-container>
 
 </template>
 
 <script>
 export default {
-	props: ['id'],
-	computed: {
-		ad() {
-		const id = this.id
-		return this.$store.getters.adById(id)
-		}
-	}
-} 
+  props: ['id'],
+  computed: {
+    ad() {
+      const { id } = this;
+      return this.$store.getters.adById(id);
+    },
+  },
+};
 </script>

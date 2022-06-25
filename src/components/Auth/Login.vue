@@ -1,6 +1,6 @@
-<template> 
+<template>
 	<v-container fluid fill-height>
-		<v-layout align-center justify-center> 
+		<v-layout align-center justify-center>
 			<v-flex xs12 sm8 md8>
 			<v-card class="elevetion-12">
 				<v-toolbar dark color="primary">
@@ -10,21 +10,21 @@
 					<v-form v-model="valid" ref="form"
 					validation>
 					<v-text-field
-						prepend-icon="mdi-account" 							name="email" 
-					label="Email" 
+						prepend-icon="mdi-account" 							name="email"
+					label="Email"
 						type="email"
 						v-model="email"
 						:rules="emailRules" >
 					</v-text-field>
 					<v-text-field
-						prepend-icon="mdi-lock" 
-						name="password" 
-						label="Password" 
+						prepend-icon="mdi-lock"
+						name="password"
+						label="Password"
 						type="password"
 						v-model="password"
 						:rules="passwordRules">
 					</v-text-field>
-					</v-form> 
+					</v-form>
 				</v-card-text>
 				<v-card-actions>
 					<v-spacer></v-spacer>
@@ -32,39 +32,39 @@
 						@click="onSumbit">
 						Login
 					</v-btn>
-				</v-card-actions>	
+				</v-card-actions>
 			</v-card>
 			</v-flex>
-		</v-layout> 
+		</v-layout>
 	</v-container>
 </template>
 <script>
 export default {
-	data () { 
-		return {
-			email: "",
-			password: "",
-			emailRules: [
-			v => !!v || 'E-mail is required',
-			v => /.+@.+\..+/.test(v) || 'E-mail must be 				valid'
-			],
-			passwordRules: [
-			v => !!v || 'Password is required',
-			v => (v && v.length >= 6) || 'Password must 			be more or equel than 6 characters'
-			]
+  data() {
+    return {
+      email: '',
+      password: '',
+      emailRules: [
+        (v) => !!v || 'E-mail is required',
+        (v) => /.+@.+\..+/.test(v) || 'E-mail must be 				valid',
+      ],
+      passwordRules: [
+        (v) => !!v || 'Password is required',
+        (v) => (v && v.length >= 6) || 'Password must 			be more or equel than 6 characters',
+      ],
 
-		} 	
-	},
-	methods: {
-		onSubmit(){
-			if (this.$refs.form.validate()){
-				const user = {
-					email: this.email,
-					password: this.password
-				}
-				console.log(user)
-			}
-		}
-	}
-} 
+    };
+  },
+  methods: {
+    onSubmit() {
+      if (this.$refs.form.validate()) {
+        const user = {
+          email: this.email,
+          password: this.password,
+        };
+        console.log(user);
+      }
+    },
+  },
+};
 </script>

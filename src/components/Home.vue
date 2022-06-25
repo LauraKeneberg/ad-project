@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<v-container fluid>
-			<v-layout row> 
+			<v-layout row>
 				<v-flex xs12>
 					<v-carousel>
 						<v-carousel-item
@@ -16,10 +16,10 @@
 						</v-carousel-item>
 					</v-carousel>
 				</v-flex>
-			</v-layout> 
+			</v-layout>
 		</v-container>
 		<v-container grid-list-lg>
-			<v-layout row wrap> 
+			<v-layout row wrap>
 				<v-flex xs12 sm6 md4
 					v-for="ad in ads"
 					:key="ad.id"
@@ -31,7 +31,7 @@
 						></v-img>
 						<v-card-title primary-title>
 							<div>
-								<h3 
+								<h3
 									class="headline mb0"
 									>{{ad.title}}</h3>
 								<div>{{ad.desc}}</div>
@@ -43,25 +43,25 @@
 						<v-btn raised color="primary">
 							Buy
 						</v-btn>
-						</v-card-actions>				
+						</v-card-actions>
 					</v-card>
 				</v-flex>
-			</v-layout> 
+			</v-layout>
 		</v-container>
 	</div>
 </template>
 
 <script>
 export default {
-	computed:  { 
-		promoAds() {
-			return this.$store.getters.promoAds
-		},
-		ads() {
-			return this.$store.getters.ads
-		}
-	}
-} 
+  computed: {
+    promoAds() {
+      return this.$store.getters.promoAds;
+    },
+    ads() {
+      return this.$store.getters.ads;
+    },
+  },
+};
 </script>
 <style scoped>
 	.ad-link {
