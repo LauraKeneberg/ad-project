@@ -1,4 +1,4 @@
-# ad-pro
+# my-app
 
 ## Project setup
 ```
